@@ -1,0 +1,28 @@
+{
+  "service": {
+    "title": "Our Services",
+    "description": "We offer a wide range of medical services for your health and well-being.",
+    "button": "Learn more about the service"
+  },
+  "patients": {
+    "title": "PATIENT CASES",
+    "description1": "For more than six years, we have been organizing medical treatment in Turkey, helping patients obtain second medical opinions, and supporting them at every stage — from the first inquiry to the completion of treatment. We work with patients from different countries around the world, each with their own story, diagnosis, and concerns.",
+    "description2": "Over this time, we have accumulated a large number of real clinical cases — situations where we were able to help find the optimal solution, select the right clinic and doctor, organize treatment, and provide support during a challenging period of life. In many cases, we were able not only to assist with the medical aspect but also to give patients hope, confidence, and the feeling that they are not alone.",
+    "underText": "These stories are the result of our experience, responsibility, and attentive approach to every patient.",
+    "lastCases": "Latest Cases"
+  },
+  "faqs": {
+    "title": "Frequently Asked Questions",
+    "description": "Quick answers to frequently asked questions about Adal Medicine. Open any question to learn more.",
+    "cannotFind": "Can't find the answer to your question?",
+    "button": "Contact Us"
+  },
+  "comments": {
+    "title": "What Our Patients Say",
+    "reply": "Patient Reviews",
+    "real": "Real experience • real care",
+    "description": "We build the treatment journey to be calm, clear, and safe — from the first message to returning home.",
+    "verified": "Verified Review",
+    "more": "Learn more →"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "footer": {
+    "brand": {
+      "description": "ADAL MEDICINE — это качественные медицинские услуги, доступные каждому. Наша миссия — обеспечить высококлассную медицинскую помощь, которая улучшает жизнь наших пациентов и их семей."
+    },
+    "groups": {
+      "about": {
+        "label": "О нас",
+        "links": {
+          "services": "Наши услуги",
+          "prices": "Цены",
+          "support": "Поддержка",
+          "reviews": "Отзывы"
+        }
+      },
+      "info": {
+        "label": "Информация",
+        "links": {
+          "howItWorks": "Как это работает",
+          "media": "Медиа материалы",
+          "updates": "Обновления",
+          "news": "Новости"
+        }
+      },
+      "community": {
+        "label": "Сообщество",
+        "links": {
+          "joinChat": "Присоединиться к чату",
+          "followInstagram": "Следите за нами в Instagram",
+          "newsletter": "Подписка на рассылку",
+          "forum": "Обсуждения на форуме",
+          "joinCommunity": "Присоединиться к сообществу"
+        }
+      }
+    },
+    "social": {
+      "tiktok": "Tiktok",
+      "instagram": "Instagram",
+      "youtube": "Youtube",
+      "mail": "Mail"
+    },
+    "bottom": {
+      "rights": "Все права защищены.",
+      "privacy": "Политика конфиденциальности",
+      "copyright": "© {year} ADAL MEDICINE, {rights}"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "footer": {
+    "brand": {
+      "description": "ADAL MEDICINE provides high-quality medical services accessible to everyone. Our mission is to deliver top-class care that improves the lives of our patients and their families."
+    },
+    "groups": {
+      "about": {
+        "label": "About",
+        "links": {
+          "services": "Our services",
+          "prices": "Pricing",
+          "support": "Support",
+          "reviews": "Reviews"
+        }
+      },
+      "info": {
+        "label": "Information",
+        "links": {
+          "howItWorks": "How it works",
+          "media": "Media",
+          "updates": "Updates",
+          "news": "News"
+        }
+      },
+      "community": {
+        "label": "Community",
+        "links": {
+          "joinChat": "Join the chat",
+          "followInstagram": "Follow us on Instagram",
+          "newsletter": "Newsletter subscription",
+          "forum": "Forum discussions",
+          "joinCommunity": "Join the community"
+        }
+      }
+    },
+    "social": {
+      "tiktok": "TikTok",
+      "instagram": "Instagram",
+      "youtube": "YouTube",
+      "mail": "Email"
+    },
+    "bottom": {
+      "rights": "All rights reserved.",
+      "privacy": "Privacy Policy",
+      "copyright": "© {year} ADAL MEDICINE, {rights}"
+    }
+  }
+}

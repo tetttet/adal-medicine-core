@@ -1,0 +1,48 @@
+{
+  "footer": {
+    "brand": {
+      "description": "ADAL MEDICINE — әр адамға қолжетімді, сапалы медициналық қызмет. Біздің миссиямыз — пациенттеріміз бен олардың отбасыларының өмірін жақсартатын жоғары деңгейдегі медициналық көмекті қамтамасыз ету."
+    },
+    "groups": {
+      "about": {
+        "label": "Біз туралы",
+        "links": {
+          "services": "Қызметтеріміз",
+          "prices": "Бағалар",
+          "support": "Қолдау",
+          "reviews": "Пікірлер"
+        }
+      },
+      "info": {
+        "label": "Ақпарат",
+        "links": {
+          "howItWorks": "Бұл қалай жұмыс істейді",
+          "media": "Медиа материалдар",
+          "updates": "Жаңартулар",
+          "news": "Жаңалықтар"
+        }
+      },
+      "community": {
+        "label": "Қауымдастық",
+        "links": {
+          "joinChat": "Чатқа қосылу",
+          "followInstagram": "Instagram-да бізді қадағалаңыз",
+          "newsletter": "Жаңалықтарға жазылу",
+          "forum": "Форумдағы талқылаулар",
+          "joinCommunity": "Қауымдастыққа қосылу"
+        }
+      }
+    },
+    "social": {
+      "tiktok": "TikTok",
+      "instagram": "Instagram",
+      "youtube": "YouTube",
+      "mail": "Email"
+    },
+    "bottom": {
+      "rights": "Барлық құқықтар қорғалған.",
+      "privacy": "Құпиялық саясаты",
+      "copyright": "© {year} ADAL MEDICINE, {rights}"
+    }
+  }
+}
