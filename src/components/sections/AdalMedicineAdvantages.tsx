@@ -20,44 +20,19 @@ import {
 } from "@/components/ui/carousel";
 import { Card } from "@/components/ui/card";
 import { Separator } from "../ui/separator";
+import { useTranslations } from "next-intl";
 
 type Advantage = {
-  title: string;
   Icon: React.ElementType;
   tone: "mint" | "blue" | "peach" | "lilac" | "sand";
 };
 
-const advantages: Advantage[] = [
-  {
-    title:
-      "Чёткий маршрут без лишнего стресса. Мы заранее выстраиваем весь процесс: документы, сроки, организация и логистика объединены в понятную систему без суеты и неожиданностей.",
-    Icon: Route,
-    tone: "mint",
-  },
-  {
-    title:
-      "Поддержка в моменты тревоги и неопределённости. Мы рядом на каждом этапе: спокойно объясняем, что ждёт дальше, как подготовиться и на что важно обратить внимание — именно этого чаще всего не хватает пациентам.",
-    Icon: HeartHandshake,
-    tone: "blue",
-  },
-  {
-    title:
-      "Осознанный выбор клиник и специалистов. Мы опираемся на подтверждённый опыт, а не случайные рекомендации: работаем только с врачами и клиниками, проверенными личной практикой и результатами пациентов.",
-    Icon: BadgeCheck,
-    tone: "peach",
-  },
-  {
-    title:
-      "Прозрачная стоимость и понятный процесс. Никаких «уточним позже», неожиданных доплат или скрытых пунктов — все расходы и этапы обсуждаются заранее, ещё до вылёта.",
-    Icon: Receipt,
-    tone: "lilac",
-  },
-  {
-    title:
-      "Глубокое знание системы здравоохранения Турции. Мы понимаем, как всё устроено на практике: куда обращаться с конкретным диагнозом, как проходит госпитализация, какие документы понадобятся и на что важно обратить внимание — это экономит время, деньги и нервы.",
-    Icon: Landmark,
-    tone: "sand",
-  },
+const advantagesUI: Advantage[] = [
+  { Icon: Route, tone: "mint" },
+  { Icon: HeartHandshake, tone: "blue" },
+  { Icon: BadgeCheck, tone: "peach" },
+  { Icon: Receipt, tone: "lilac" },
+  { Icon: Landmark, tone: "sand" },
 ];
 
 const toneClasses: Record<Advantage["tone"], string> = {
@@ -69,11 +44,15 @@ const toneClasses: Record<Advantage["tone"], string> = {
 };
 
 export function AdalMedicineAdvantages({ className }: { className?: string }) {
+  const t = useTranslations("AdalMedicineAdvantages.AdalMedicineAdvantages");
+
+  const items = (t.raw("items") as string[]) ?? [];
+
   return (
     <section className={cn("w-full", className)}>
       <Separator className="my-20" />
+
       <div className="my-20">
-        {/* Заголовок */}
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -81,10 +60,9 @@ export function AdalMedicineAdvantages({ className }: { className?: string }) {
           transition={{ duration: 0.45, ease: "easeOut" }}
           className="text-balance text-xl font-semibold tracking-tight md:text-2xl"
         >
-          Преимущества лечение с Adal Medicine
+          {t("title")}
         </motion.h2>
 
-        {/* Карточки */}
         <div className="relative mt-5">
           <Carousel
             opts={{
@@ -95,8 +73,9 @@ export function AdalMedicineAdvantages({ className }: { className?: string }) {
             className="w-full"
           >
             <CarouselContent className="-ml-4">
-              {advantages.map((item, i) => {
-                const Icon = item.Icon;
+              {advantagesUI.map((ui, i) => {
+                const Icon = ui.Icon;
+                const text = items[i] ?? "";
 
                 return (
                   <CarouselItem
@@ -119,7 +98,7 @@ export function AdalMedicineAdvantages({ className }: { className?: string }) {
                         className={cn(
                           "h-full rounded-2xl border p-5 shadow-sm transition-shadow",
                           "hover:shadow-md",
-                          toneClasses[item.tone],
+                          toneClasses[ui.tone],
                         )}
                       >
                         <div className="flex items-start gap-3">
@@ -128,7 +107,7 @@ export function AdalMedicineAdvantages({ className }: { className?: string }) {
                           </div>
 
                           <p className="text-pretty text-[14px] leading-relaxed md:text-[16px]">
-                            {item.title}
+                            {text}
                           </p>
                         </div>
                       </Card>
@@ -138,7 +117,6 @@ export function AdalMedicineAdvantages({ className }: { className?: string }) {
               })}
             </CarouselContent>
 
-            {/* Кнопки листания (desktop) */}
             <div className="pointer-events-none absolute inset-y-0 left-0 right-0 hidden items-center justify-between md:flex">
               <div className="pointer-events-auto">
                 <CarouselPrevious className="shadow-sm" />
@@ -149,9 +127,8 @@ export function AdalMedicineAdvantages({ className }: { className?: string }) {
             </div>
           </Carousel>
 
-          {/* Подсказка свайпа */}
           <div className="mt-3 text-xs text-muted-foreground md:hidden">
-            Свайпните влево/вправо, чтобы посмотреть все пункты
+            {t("swipeHint")}
           </div>
         </div>
       </div>

@@ -2,13 +2,7 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-import {
-  HelpCircle,
-  AlarmClock,
-  Stethoscope,
-  Cpu,
-  FileSearch,
-} from "lucide-react";
+import { HelpCircle, AlarmClock, Stethoscope, Cpu, FileSearch } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import {
@@ -20,47 +14,22 @@ import {
 } from "@/components/ui/carousel";
 import { Card } from "@/components/ui/card";
 import { Separator } from "../ui/separator";
+import { useTranslations } from "next-intl";
 
-type Reason = {
-  title: string;
+type ReasonUI = {
   Icon: React.ElementType;
   tone: "blue" | "mint" | "peach" | "lilac" | "sand";
 };
 
-const reasons: Reason[] = [
-  {
-    title:
-      "Есть сомнения в диагнозе — нужно второе независимое мнение и точная диагностика",
-    Icon: HelpCircle,
-    tone: "blue",
-  },
-  {
-    title:
-      "Необходима срочная операция, а в стране ожидание растягивается на недели или месяцы.",
-    Icon: AlarmClock,
-    tone: "mint",
-  },
-  {
-    title:
-      "Пациенту нужен комплексный подход: диагностика, консилиум, план действий в короткие сроки.",
-    Icon: Stethoscope,
-    tone: "peach",
-  },
-  {
-    title:
-      "Требуется высокотехнологичное вмешательство (катетерные операции, роботизированные методы, гибридные процедуры).",
-    Icon: Cpu,
-    tone: "lilac",
-  },
-  {
-    title:
-      "Есть желание получить более детальное и расширенное мнение по поводу диагноза или плана лечения.",
-    Icon: FileSearch,
-    tone: "sand",
-  },
+const reasonsUI: ReasonUI[] = [
+  { Icon: HelpCircle, tone: "blue" },
+  { Icon: AlarmClock, tone: "mint" },
+  { Icon: Stethoscope, tone: "peach" },
+  { Icon: Cpu, tone: "lilac" },
+  { Icon: FileSearch, tone: "sand" },
 ];
 
-const toneClasses: Record<Reason["tone"], string> = {
+const toneClasses: Record<ReasonUI["tone"], string> = {
   blue: "bg-sky-50 border-sky-100 text-slate-900",
   mint: "bg-emerald-50 border-emerald-100 text-slate-900",
   peach: "bg-orange-50 border-orange-100 text-slate-900",
@@ -68,16 +37,15 @@ const toneClasses: Record<Reason["tone"], string> = {
   sand: "bg-amber-50 border-amber-100 text-slate-900",
 };
 
-export function WhenTreatmentAbroadRecommended({
-  className,
-}: {
-  className?: string;
-}) {
+export function WhenTreatmentAbroadRecommended({ className }: { className?: string }) {
+  const t = useTranslations("AdalMedicineAdvantages.WhenTreatmentAbroadRecommended");
+  const items = (t.raw("items") as string[]) ?? [];
+
   return (
     <section className={cn("w-full", className)}>
       <Separator className="my-20" />
+
       <div className="my-20">
-        {/* Заголовок */}
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,10 +53,9 @@ export function WhenTreatmentAbroadRecommended({
           transition={{ duration: 0.45, ease: "easeOut" }}
           className="text-balance text-xl font-semibold tracking-tight md:text-2xl"
         >
-          Когда рекомендуется лечение за границей ?
+          {t("title")}
         </motion.h2>
 
-        {/* Листающие блоки */}
         <div className="relative mt-5">
           <Carousel
             opts={{
@@ -99,8 +66,9 @@ export function WhenTreatmentAbroadRecommended({
             className="w-full"
           >
             <CarouselContent className="-ml-4">
-              {reasons.map((item, i) => {
-                const Icon = item.Icon;
+              {reasonsUI.map((ui, i) => {
+                const Icon = ui.Icon;
+                const text = items[i] ?? "";
 
                 return (
                   <CarouselItem
@@ -123,7 +91,7 @@ export function WhenTreatmentAbroadRecommended({
                         className={cn(
                           "h-full rounded-2xl border p-5 shadow-sm transition-shadow",
                           "hover:shadow-md",
-                          toneClasses[item.tone],
+                          toneClasses[ui.tone]
                         )}
                       >
                         <div className="flex items-start gap-3">
@@ -132,7 +100,7 @@ export function WhenTreatmentAbroadRecommended({
                           </div>
 
                           <p className="text-pretty text-[14px] leading-relaxed md:text-[16px]">
-                            {item.title}
+                            {text}
                           </p>
                         </div>
                       </Card>
@@ -142,7 +110,6 @@ export function WhenTreatmentAbroadRecommended({
               })}
             </CarouselContent>
 
-            {/* Кнопки листания (как в shadcn), на мобилке можно скрыть */}
             <div className="pointer-events-none absolute inset-y-0 left-0 right-0 hidden items-center justify-between md:flex">
               <div className="pointer-events-auto">
                 <CarouselPrevious className="shadow-sm" />
@@ -153,9 +120,8 @@ export function WhenTreatmentAbroadRecommended({
             </div>
           </Carousel>
 
-          {/* Подсказка свайпа на мобилке */}
           <div className="mt-3 text-xs text-muted-foreground md:hidden">
-            Свайпните влево/вправо, чтобы посмотреть все пункты
+            {t("swipeHint")}
           </div>
         </div>
       </div>

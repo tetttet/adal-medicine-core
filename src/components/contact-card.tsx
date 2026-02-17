@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { MailIcon, MapIcon, PhoneIcon } from "lucide-react";
 import { useState, useTransition } from "react";
+import { useTranslations } from "next-intl";
 
 type ContactInfoProps = React.ComponentProps<"div"> & {
   icon: React.ReactNode;
@@ -96,6 +97,7 @@ function ContactInfo({
 
 export const ContactCardDemo = () => {
   const [pending, startTransition] = useTransition();
+  const t = useTranslations("Contact");
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -158,27 +160,27 @@ export const ContactCardDemo = () => {
       contactInfo={[
         {
           icon: <MailIcon className="size-5" />,
-          label: "Почта",
+          label: t("mail"),
           value: "adal.medicine.company@gmail.com",
         },
         {
           icon: <PhoneIcon className="size-5" />,
-          label: "Телефон",
+          label: t("phone"),
           value: "+7 (___) ___-__-__",
         },
         {
           icon: <MapIcon className="size-5" />,
-          label: "Адрес",
+          label: t("address"),
           value: "Казахстан",
           className: "col-span-2",
         },
       ]}
-      description="Если у вас есть вопросы по нашим услугам или вам нужна помощь, пожалуйста, заполните форму здесь. Мы стараемся отвечать в течение 1 рабочего дня."
-      title="Свяжитесь с нами"
+      description={t("contactUsDescription")}
+      title={t("contactUs")}
     >
       <form onSubmit={onSubmit} className="w-full space-y-4">
         <div className="flex flex-col gap-2">
-          <Label>Имя</Label>
+          <Label>{t("name")}</Label>
           <Input
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -188,7 +190,7 @@ export const ContactCardDemo = () => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <Label>Почта</Label>
+          <Label>{t("mail")}</Label>
           <Input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -198,7 +200,7 @@ export const ContactCardDemo = () => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <Label>Телефон</Label>
+          <Label>{t("phone")}</Label>
           <Input
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
@@ -208,11 +210,11 @@ export const ContactCardDemo = () => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <Label>Сообщение</Label>
+          <Label>{t("message")}</Label>
           <Textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Напишите ваш вопрос..."
+            placeholder={t("messagePlaceholder")!}
           />
         </div>
 
@@ -224,7 +226,7 @@ export const ContactCardDemo = () => {
         )}
 
         <Button className="w-full rounded-2xl" type="submit" disabled={pending}>
-          {pending ? "Отправка..." : "Отправить"}
+          {pending ? t("sending") : t("submit")}
         </Button>
       </form>
     </ContactCard>

@@ -1,0 +1,12 @@
+{
+    "mail": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "name": "Name",
+    "submit": "Submit",
+    "sending": "Sending...",
+    "message": "Message",
+    "messagePlaceholder": "Enter your message here...",
+    "contactUs": "Contact Us",
+    "contactUsDescription": "If you have any questions about our services or need assistance, please fill out the form below. We aim to respond within 1 business day."
+}

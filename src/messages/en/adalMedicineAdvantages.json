@@ -1,0 +1,24 @@
+{
+  "AdalMedicineAdvantages": {
+    "title": "Advantages of treatment with Adal Medicine",
+    "items": [
+      "A clear roadmap without extra stress. We plan the entire process in advance: documents, timelines, coordination, and logistics are combined into a simple system with no fuss or surprises.",
+      "Support during anxiety and uncertainty. We stay by your side at every step: calmly explain what comes next, how to prepare, and what matters most — exactly what patients often lack.",
+      "A conscious choice of clinics and specialists. We rely on proven experience, not random recommendations: we work only with doctors and clinics verified through practice and patient outcomes.",
+      "Transparent pricing and a clear process. No “we’ll уточним later,” no unexpected extra fees or hidden clauses — all costs and steps are discussed in advance, before the trip.",
+      "Deep knowledge of Turkey’s healthcare system. We know how it works in real life: where to go for a specific diagnosis, how hospitalization is arranged, what documents are needed, and what to watch for — saving time, money, and nerves."
+    ],
+    "swipeHint": "Swipe left/right to view all items"
+  },
+  "WhenTreatmentAbroadRecommended": {
+    "title": "When is treatment abroad recommended?",
+    "items": [
+      "If there are doubts about the diagnosis — you need a second independent opinion and accurate diagnostics.",
+      "If an urgent surgery is needed and waiting lists in your country stretch for weeks or months.",
+      "If a comprehensive approach is required: diagnostics, a medical board, and an action plan within a short timeframe.",
+      "If high-tech procedures are needed (catheter-based interventions, robotic methods, hybrid procedures).",
+      "If you want a more detailed, extended opinion on the diagnosis or the treatment plan."
+    ],
+    "swipeHint": "Swipe left/right to view all items"
+  }
+}
